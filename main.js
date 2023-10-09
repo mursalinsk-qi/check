@@ -75,6 +75,11 @@ exec(command1, (error1, stdout1, stderr1) => {
                     }
 
                     console.log('Committed changes.');
+                    exec('git config pull.rebase false', (error8, stdout8, stderr8) => {
+                        if (error8) {
+                            console.error(`Error configuring git pull: ${error8}`);
+                            return;
+                        }
 
                     exec(`git pull origin ${branch}`, (error6, stdout6, stderr6) => {
                         if (error6) {
@@ -94,6 +99,7 @@ exec(command1, (error1, stdout1, stderr1) => {
                         });
                     });
                 });
+            });
             });
         });
     });
