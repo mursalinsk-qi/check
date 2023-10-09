@@ -81,13 +81,13 @@ exec(command1, (error1, stdout1, stderr1) => {
                             return;
                         }
 
-                    exec(`git pull origin ${branch}`, (error6, stdout6, stderr6) => {
-                        if (error6) {
-                            console.error(`Error pulling changes: ${error6}`);
-                            return;
-                        }
+                        exec(`git pull origin ${branch} --allow-unrelated-histories`, (error6, stdout6, stderr6) => {
+                            if (error6) {
+                                console.error(`Error pulling changes: ${error6}`);
+                                return;
+                            }
 
-                        console.log(`Pulled changes from origin ${branch}.`);
+                            console.log(`Pulled changes from origin ${branch}.`);
 
                         exec('git push', (error7, stdout7, stderr7) => {
                             if (error7) {
