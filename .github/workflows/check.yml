@@ -19,3 +19,13 @@ jobs:
           # Read the flag value from the file
           flag=$(cat flag.txt)
           echo "Flag value is $flag"
+          # Check if flag is true
+          if [ "$flag" = "true" ]; then
+            # Add, commit, and push a file (you can customize this part)
+            echo "Creating and pushing a new file..."
+            echo "Hello, this is a new file!" > newfile.txt
+            git add newfile.txt
+            git commit -m "Add newfile.txt"
+            git push
+          else
+          echo "Flag is not true, skipping commit and push."

@@ -1,2 +1,2 @@
 with open("flag.txt", "w") as file:
-    file.write("true")
+    file.write("false")
