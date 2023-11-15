@@ -2,7 +2,7 @@ import os
 import logging
 from bs4 import BeautifulSoup
 
-import send_message
+# import send_message
 
 logging.basicConfig(level='DEBUG')
 
