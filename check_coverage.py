@@ -54,7 +54,6 @@ def generate_coverage_report(html_file_path):
 
 
 def commit_file(coverage_file, new_coverage_file):
-    logging.info("commit flag", commit_flag)
     if commit_flag:
         if os.path.exists(coverage_file):
             os.remove(coverage_file)
