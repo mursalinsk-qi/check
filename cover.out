@@ -1,11 +1,11 @@
 mode: set
-go-tutorails/internal/math/reversenumber/revfunc.go:5.33,7.14 2 1
-go-tutorails/internal/math/reversenumber/revfunc.go:7.14,11.3 3 1
-go-tutorails/internal/math/reversenumber/revfunc.go:12.2,12.12 1 1
-go-tutorails/internal/math/reversenumber/revfunc.go:15.14,17.2 1 1
 go-tutorails/internal/math/calculator/operations.go:2.34,4.2 1 1
 go-tutorails/internal/math/calculator/operations.go:5.34,7.2 1 1
 go-tutorails/internal/math/calculator/operations.go:8.34,9.17 1 1
 go-tutorails/internal/math/calculator/operations.go:9.17,11.3 1 1
 go-tutorails/internal/math/calculator/operations.go:11.8,13.3 1 1
+go-tutorails/internal/math/reversenumber/revfunc.go:5.33,7.14 2 1
+go-tutorails/internal/math/reversenumber/revfunc.go:7.14,11.3 3 1
+go-tutorails/internal/math/reversenumber/revfunc.go:12.2,12.12 1 1
+go-tutorails/internal/math/reversenumber/revfunc.go:15.14,17.2 1 1
 go-tutorails/internal/math/wordcounter/wordfunc.go:2.26,4.2 1 1
