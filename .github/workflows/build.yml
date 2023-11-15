@@ -15,11 +15,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: stefanzweifel/git-auto-commit-action@v5
-
-      - uses: tonynguyenit18/github-action-custom-vars@v1
-      - run: echo $RECENT_MERGED_BRANCH_NAME > curbranch.txt
-
       - name: Set up Go 1.x
         uses: actions/setup-go@v2
         with:
@@ -42,12 +37,14 @@ jobs:
           python-version: "3.10"
       - name: Install dependencies
         run: |
-            python -m pip install --upgrade pip
-            pip install beautifulsoup4
-            pip install requests
+          python -m pip install --upgrade pip
+          pip install beautifulsoup4
+          pip install requests
 
       - name: Checking coverage
         env:
           ACTION_TYPE: publish
           webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
         run: python check_coverage.py
+
+      - uses: stefanzweifel/git-auto-commit-action@v5
