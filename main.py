@@ -1,2 +1,2 @@
-import os
-os.environ["flag"]="true"
+with open("flag.txt", "w") as file:
+    file.write(True)

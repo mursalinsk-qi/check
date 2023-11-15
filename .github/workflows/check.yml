@@ -15,4 +15,7 @@ jobs:
       - name: Running script
         run: python main.py
       - name: Use flag in a step
-        run: echo "Flag value is $flag"
+        run: |
+          # Read the flag value from the file
+          flag=$(cat flag.txt)
+          echo "Flag value is $flag"
