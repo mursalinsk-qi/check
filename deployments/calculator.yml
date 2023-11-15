@@ -1,0 +1,5 @@
+services:
+    calculator:
+      build:
+        context: ../.
+        dockerfile: ./build/package/calculator/Dockerfile
