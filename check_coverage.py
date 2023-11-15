@@ -100,3 +100,4 @@ def check_coverage():
 check_coverage()
 
 # send_message.send_message_to_teams(data)
+print("Hello")
