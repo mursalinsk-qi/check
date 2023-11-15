@@ -24,7 +24,7 @@ jobs:
             # Add, commit, and push a file (you can customize this part)
             echo "Creating and pushing a new file..."
             git config --global user.email "mursalin.sk@quantuminventions.com"
-            git config --global user.name "Mursalin Sk"
+            git config --global user.name "mursalinsk-qi"
             echo "Hello, this is a new file!" > newfile.txt
             git add newfile.txt
             git commit -m "Add newfile.txt"
