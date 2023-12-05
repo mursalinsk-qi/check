@@ -1,53 +1,17 @@
-name: Check Code Coverage
+name: Create Tag
 
 on:
-  pull_request:
-
-env:
-  USERNAME: ${{ github.actor }}
-  CUR_NAME: ${{toJSON(github.event.head_commit.message)}}
+  push:
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: stefanzweifel/git-auto-commit-action@v5
-
-      - uses: tonynguyenit18/github-action-custom-vars@v1
-      - run: echo $RECENT_MERGED_BRANCH_NAME > curbranch.txt
-
-      - name: Set up Go 1.x
-        uses: actions/setup-go@v2
-        with:
-          go-version: ^1.18.0
-        id: go
-
-      - name: Configure git for private modules
-        env:
-          GITHUB_USERNAME: ${{ secrets.SERVICE_ACCOUNT_GITHUB_USERNAME }}
-          GITHUB_ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-        run: git config --global url."https://${GITHUB_USERNAME}:${GITHUB_ACCESS_TOKEN}@github.com".insteadOf "https://github.com"
-
-      - name: Get dependencies
-        run: |
-          go get -v -t -d ./...
-
-      - name: Set up Python 3.10
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.10"
-      - name: Install dependencies
-        run: |
-            python -m pip install --upgrade pip
-            pip install beautifulsoup4
-            pip install requests
-
-      - name: Checking coverage
-        env:
-          ACTION_TYPE: publish
-          webhook-uri: ${{ secrets.MS_TEAMS_WEBHOOK_URI }}
-        run: python check_coverage.py
+    - uses: actions/checkout@v2
+    - uses: Klemensas/action-autotag@stable
+      env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      with:
+        version: 0.0.1
