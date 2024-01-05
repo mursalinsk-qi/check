@@ -13,5 +13,5 @@ jobs:
       - name: PR Title Verify
         uses: Slashgear/action-check-pr-title@v4.3.0
         with:
-         regexp: "([a-z])+"
+         regexp: '^(fix|feat|build|release)\(R-[0-9]+\): .+'
 
