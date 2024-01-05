@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: PR Title Verify
-        uses: satvik-s/pr-title-check@1.2.1
+        uses: pragmatic-tools/pr-title-validator@1.0.0
         with:
           pattern: '^(fix|feat|build|release)\(R-[0-9]+\): .+'
 
