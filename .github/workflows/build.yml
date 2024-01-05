@@ -9,9 +9,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: butlerlogic/action-autotag@stable
-      env:
-        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      with:
-        version: 0.0.1
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: PR Title Verify
+        uses: satvik-s/pr-title-check
+        with:
+          pattern: '^(fix|feat|build|release)\(R-[0-9]+\): .+'
