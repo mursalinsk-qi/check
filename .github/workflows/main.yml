@@ -11,7 +11,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: PR Title Verify
-        uses: pragmatic-tools/pr-title-validator@1.0.0
+        uses: Slashgear/action-check-pr-title@v4.3.0
         with:
-          pattern: '^(fix|feat|build|release)\(R-[0-9]+\): .+'
+          regexp: "(fix|feat|build|release)\(R-[0-9]+\): .+"
 
