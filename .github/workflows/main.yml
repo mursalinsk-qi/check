@@ -16,5 +16,6 @@ jobs:
             feat
             release
             build
+          wip: true
           scopes: R-[0-9]+
           requireScope: true
