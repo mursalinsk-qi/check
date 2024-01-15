@@ -17,3 +17,4 @@ jobs:
             release
             build
           scopes: R-[0-9]+
+          requireScope: true
