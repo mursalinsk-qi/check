@@ -2,7 +2,7 @@ import os
 import logging
 from bs4 import BeautifulSoup
 
-import send_message
+# import send_message
 
 logging.basicConfig(level='DEBUG')
 
@@ -54,7 +54,6 @@ def generate_coverage_report(html_file_path):
 
 
 def commit_file(coverage_file, new_coverage_file):
-    logging.info("commit flag", commit_flag)
     if commit_flag:
         if os.path.exists(coverage_file):
             os.remove(coverage_file)
@@ -100,3 +99,4 @@ def check_coverage():
 check_coverage()
 
 # send_message.send_message_to_teams(data)
+print("Hello")
